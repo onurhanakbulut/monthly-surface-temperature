@@ -24,20 +24,25 @@ df.insert(1,'Entity_Encoded',df.pop('Entity_Encoded'))
 x = df.iloc[:,1:4].values
 y = df.iloc[:,-1:].values
 
-#-----------------------Standart Scaler------------
+#------------------Standart Scale---------------------
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 
 X = sc.fit_transform(x)
 Y = sc.fit_transform(y)
 
-#-----------------SVR--------------------
 
+#-----------------PIPELINE SVR--------------------
+
+from sklearn.pipeline import Pipeline
 from sklearn.svm import SVR
-svr = SVR(kernel='rbf') #linear, poly, rbf, sigmoid, precomputed
-svr.fit(X,Y)
 
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),  
+    ('svr', SVR(kernel='poly'))  
+])
 
+pipeline.fit(X, Y)
 
 
 
@@ -45,7 +50,7 @@ svr.fit(X,Y)
 
 
 
-joblib.dump(svr, "svr_model.pkl")
+joblib.dump(pipeline, "svr_pipeline.pkl")
 print("The model has been saved")
 
 

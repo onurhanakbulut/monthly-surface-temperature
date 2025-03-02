@@ -44,7 +44,7 @@ pipeline = Pipeline([
     ('linear_regression', LinearRegression())  
 ])
 
-
+pipeline.fit(x,y)
 
 
 #----------------joblib------------------
