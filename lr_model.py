@@ -19,6 +19,7 @@ df = df.drop(['Code','Average surface temperature.1'], axis=1)
 df['Entity_Encoded'] = df.groupby('Entity')['Average surface temperature'].transform('mean')
 df.insert(1,'Entity_Encoded',df.pop('Entity_Encoded'))
 
+df.to_csv('data.csv', index=False, encoding='utf-8-sig')
 
 #-------------------
 x = df.iloc[:,1:4].values
