@@ -14,6 +14,19 @@ The dataset is sourced from **Kaggle**:
 
 ---
 
+### 📉 Dataset Visualizations
+Below are the raw data visualizations:
+
+#### **Global Surface Temperature Trends (1940-2024)**
+This graph shows the **worldwide average surface temperature trend** over the years without considering country-specific variations.
+![Graph 1](images/graph1.png)
+
+#### **Country-wise Temperature Trends (1940-2024)**
+This graph presents **temperature variations across different countries** over the years, providing insights into regional climate changes.
+![Graph 2](images/graph2.png)
+
+---
+
 ## 🔬 Machine Learning Models Used
 The following machine learning models were applied for prediction:
 
