@@ -62,6 +62,7 @@ The table below presents the **R² score**, **MAE**, **MSE**, and **RMSE** for e
 If you have any questions or suggestions regarding this project, feel free to reach out:
 
 📩 Email: onurhanakbulut.ai@gmail.com
+
 🔗 GitHub: onurhanakbulut
 
 If you would like to contribute to this project, feel free to submit a Pull Request or open a new Issue! ⭐
