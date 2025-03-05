@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import joblib
 
+
+
 #-------------PREPROCESS-------------------
 data = pd.read_csv('average-monthly-surface-temperature.csv')
 df = data
@@ -24,25 +26,29 @@ df.insert(1,'Entity_Encoded',df.pop('Entity_Encoded'))
 x = df.iloc[:,1:4].values
 y = df.iloc[:,-1:].values
 
-#------------------Standart Scale---------------------
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
 
-X = sc.fit_transform(x)
-Y = sc.fit_transform(y)
+
+
+#-------------------TRAINTEST---------------------
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test =train_test_split(x,y,test_size=0.2, shuffle=False)
+
+
 
 
 #-----------------PIPELINE SVR--------------------
-
+from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.svm import SVR
 
 pipeline = Pipeline([
     ('scaler', StandardScaler()),  
-    ('svr', SVR(kernel='poly'))  
+    ('svr', SVR(kernel='rbf'))  
 ])
 
-pipeline.fit(X, Y)
+pipeline.fit(x_train, y_train)
 
 
 

@@ -32,19 +32,9 @@ from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test =train_test_split(x,y,test_size=0.2, shuffle=False)
 
 
-#--------------LINEAR REGRESSION-------------------
-from sklearn.linear_model import LinearRegression
-lr = LinearRegression()
-lr.fit(x_train,y_train)
-
-#----------------joblib------------------
-
-
-
-joblib.dump(lr, "lr_model.pkl")
-print("The model has been saved")
-
-
+joblib.dump(x_test, "x_test.pkl")
+joblib.dump(y_test, "y_test.pkl")
+print("✅ The test data has been saved")
 
 
 

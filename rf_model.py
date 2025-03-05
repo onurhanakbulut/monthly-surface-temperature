@@ -26,6 +26,13 @@ x = df.iloc[:,1:4].values
 y = df.iloc[:,-1:].values
 
 
+#--------------------TRAIN TEST------------------------
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test =train_test_split(x,y,test_size=0.2, shuffle=False)
+
+
 #---------------------------RANDOMIZEDSEARCHCV-------------------------
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
@@ -63,7 +70,7 @@ rf = RandomForestRegressor()
 #-------------------RANDOM FOREST------------------
 
 rf = RandomForestRegressor(n_estimators=300, max_depth=5, min_samples_split=10, min_samples_leaf=5 ,n_jobs=-1)
-rf.fit(x,y)
+rf.fit(x_train,y_train)
 
 
 
