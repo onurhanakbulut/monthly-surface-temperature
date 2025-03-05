@@ -53,7 +53,7 @@ The table below presents the **R² score**, **MAE**, **MSE**, and **RMSE** for e
 
 ## 🔮 Future Predictions (2025-2035)
 - **Polynomial Regression** was used to predict the global monthly average surface temperatures for **2025-2035**.
-- The predicted values were analyzed and visualized.
+- The predicted values were analyzed.
 
 ---
 
