@@ -56,7 +56,7 @@ The table below presents the **R² score**, **MAE**, **MSE**, and **RMSE** for e
 - The predicted values were analyzed.
 
 
-### 🌍 **Sample Prediction Output**
+###  **Sample Prediction Output**
 Below is an example of **a portion of the obtained data**, specifically showing predictions related to Turkey:
 ![Turkey Future Predictions](images/graph11.png)
 
